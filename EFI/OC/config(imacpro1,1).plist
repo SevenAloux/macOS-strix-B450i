@@ -14,6 +14,14 @@
 				<key>Path</key>
 				<string>SSDT-EC-USBX-DESKTOP.aml</string>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-SLEEP-PTXH.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-SLEEP-PTXH.aml</string>
+			</dict>
 		</array>
 		<key>Delete</key>
 		<array>
@@ -58,29 +66,20 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>_Q11 to XQ11</string>
+				<string>PTXH to XHCI</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>Enabled</key>
 				<false/>
 				<key>Find</key>
 				<data>
-				X1ExMQ==
+				UFRYSA==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>OemTableId</key>
-				<data>
-				</data>
 				<key>Replace</key>
 				<data>
-				WFExMQ==
-				</data>
-				<key>ReplaceMask</key>
-				<data>
+				WEhDSQ==
 				</data>
 				<key>Skip</key>
 				<integer>0</integer>
@@ -92,29 +91,20 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>_Q12 to XQ12</string>
+				<string>XHC0 to XHC2</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>Enabled</key>
 				<false/>
 				<key>Find</key>
 				<data>
-				X1ExMg==
+				WEhDMA==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>OemTableId</key>
-				<data>
-				</data>
 				<key>Replace</key>
 				<data>
-				WFExMg==
-				</data>
-				<key>ReplaceMask</key>
-				<data>
+				WEhDMg==
 				</data>
 				<key>Skip</key>
 				<integer>0</integer>
@@ -175,7 +165,7 @@
 			<key>EnableSafeModeSlide</key>
 			<true/>
 			<key>EnableWriteUnprotector</key>
-			<true/>
+			<false/>
 			<key>ForceExitBootServices</key>
 			<false/>
 			<key>ProtectMemoryRegions</key>
@@ -202,10 +192,17 @@
 	<dict>
 		<key>Add</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x3,0x4)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>built-in</key>
+				<data>
+				AQAAAA==
+				</data>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x8,0x1)/Pci(0x0,0x4)</key>
 			<dict>
 				<key>layout-id</key>
-				<integer>7</integer>
+				<integer>1</integer>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -288,22 +285,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SmallTreeIntel82576</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>Innie.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/Innie</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1659,8 +1640,6 @@
 			<true/>
 			<key>AuthRestart</key>
 			<false/>
-			<key>BlacklistAppleUpdate</key>
-			<true/>
 			<key>BootProtect</key>
 			<string>Bootstrap</string>
 			<key>ExposeSensitiveData</key>
@@ -1697,14 +1676,13 @@
 				Rg==
 				</data>
 				<key>boot-args</key>
-				<string>npci=0x2000 agdpmod=pikera -inniebeta vsmcgen=1</string>
+				<string>npci=0x2000 agdpmod=pikera</string>
 				<key>csr-active-config</key>
 				<data>
 				AAAAAA==
 				</data>
 				<key>prev-lang:kbd</key>
 				<data>
-				cnUtUlU6MjUy
 				</data>
 				<key>run-efi-updater</key>
 				<string>No</string>
@@ -1776,7 +1754,7 @@
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
-			<string>MacPro7,1</string>
+			<string>iMacPro1,1</string>
 			<key>SystemSerialNumber</key>
 			<string></string>
 			<key>SystemUUID</key>
@@ -1832,6 +1810,7 @@
 			<string>HfsPlus.efi</string>
 			<string>OpenRuntime.efi</string>
 			<string>OpenCanopy.efi</string>
+			<string>AudioDxe.efi</string>
 		</array>
 		<key>Input</key>
 		<dict>
